@@ -43,7 +43,7 @@ header {
 
 .logo {
     height: 60px;
-    width: 205px;
+    width: 190px;
     display: block;
 }
 
@@ -140,7 +140,7 @@ h2 {
     align-items: center;
     text-align: center;
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/wallpaper.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/wallpaper.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
