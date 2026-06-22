@@ -98,19 +98,15 @@
         });
     }
 
-    function updateDisplay() {
-        heroBanner.style.opacity = '0.3';
-        heroBanner.style.transition = 'opacity 0.15s ease-in-out';
+function updateDisplay() {
+        // 1. Instantly swap the background image without changing opacity or transitions
+        heroBanner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${wallpapers[currentIndex]}')`;
         
-        setTimeout(() => {
-            heroBanner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${wallpapers[currentIndex]}')`;
-            heroBanner.style.opacity = '1';
-            
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, idx) => {
-                idx === currentIndex ? dot.classList.add('active') : dot.classList.remove('active');
-            });
-        }, 180);
+        // 2. Keep the active dot indicators updating correctly
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, idx) => {
+            idx === currentIndex ? dot.classList.add('active') : dot.classList.remove('active');
+        });
     }
 
     document.getElementById('nextBtn').addEventListener('click', () => {
