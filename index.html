@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heba Logistics</title>
+    <link rel="icon" type="image/png" href="images/bluelogo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Heba Logistics Logo" class="logo">
+    </a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="quotation.html">Request a Quotation</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero" id="heroBanner">
+    <a href="javascript:void(0)" class="slider-arrow prev-arrow" id="prevBtn">&#10094;</a>
+    <a href="javascript:void(0)" class="slider-arrow next-arrow" id="nextBtn">&#10095;</a>
+
+    <h1>Reliable & Fast Logistics Solutions</h1>
+    <p>We provide comprehensive supply chain solutions tailored to your business, managing cargo worldwide with ultimate efficiency.</p>
+    <a href="quotation.html" class="btn">Get a Quote Now</a>
+    <div class="wallpaper-dots" id="dotsContainer"></div>
+</section>
+
+<section class="overview">
+    <h2>Welcome to Heba Logistics</h2>
+    <p class="overview-text">As a global logistics partner, we orchestrate precision transport, smart warehousing strategies, custom clearance, and deep supply chain solutions. Your business demands reliable transit; we deliver exact solutions.</p>
+</section>
+
+<section class="partners-section">
+    <h2 class="partners-title">Success Partners</h2>
+    <div class="partners-slider-wrapper">
+        <div class="partners-slider">
+            <img src="images/partner1.png" alt="Partner 1">
+            <img src="images/partner2.png" alt="Partner 2">
+            <img src="images/partner3.png" alt="Partner 3">
+            <img src="images/partner4.png" alt="Partner 4">
+            <img src="images/partner5.png" alt="Partner 5">
+            <img src="images/partner1.png" alt="Partner 1">
+            <img src="images/partner2.png" alt="Partner 2">
+            <img src="images/partner3.png" alt="Partner 3">
+            <img src="images/partner4.png" alt="Partner 4">
+            <img src="images/partner5.png" alt="Partner 5">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Heba Logistics. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const wallpapers = [
+        "images/wallpaper.png",
+        "images/wallpaper1.png",
+        "images/wallpaper2.png",
+        "images/wallpaper3.png",
+        "images/wallpaper4.png",
+        "images/wallpaper5.png",
+        "images/wallpaper6.png",
+    ];
+
+    const slideDuration = 3500; 
+    let currentIndex = 0;
+    let timerId = null;
+    const heroBanner = document.getElementById('heroBanner');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    function buildNavigationDots() {
+        dotsContainer.innerHTML = '';
+        wallpapers.forEach((img, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if(index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => jumpToWallpaper(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function updateDisplay() {
+        heroBanner.style.opacity = '0.3';
+        heroBanner.style.transition = 'opacity 0.4s ease-in-out';
+        
+        setTimeout(() => {
+            heroBanner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${wallpapers[currentIndex]}')`;
+            heroBanner.style.opacity = '1';
+            
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                idx === currentIndex ? dot.classList.add('active') : dot.classList.remove('active');
+            });
+        }, 180);
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        clearInterval(timerId);
+        currentIndex = (currentIndex + 1) % wallpapers.length;
+        updateDisplay();
+        startAutoRotation();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        clearInterval(timerId);
+        currentIndex = (currentIndex - 1 + wallpapers.length) % wallpapers.length;
+        updateDisplay();
+        startAutoRotation();
+    });
+
+    function startAutoRotation() {
+        if(timerId) clearInterval(timerId);
+        timerId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % wallpapers.length;
+            updateDisplay();
+        }, slideDuration);
+    }
+
+    function jumpToWallpaper(index) {
+        clearInterval(timerId);
+        currentIndex = index;   
+        updateDisplay();
+        startAutoRotation();
+    }
+
+    buildNavigationDots();
+    updateDisplay();
+    startAutoRotation();
+</script>
+
+</body>
+</html>
