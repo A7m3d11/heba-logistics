@@ -502,3 +502,122 @@ form button:disabled {
     .about-split-layout, .contact-split-container { flex-direction: column; }
     .four-card-row, .services-row-4 { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   About Page Enhancements & Lightbox Styles
+   ========================================================================== */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.project-item-box {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item-box:hover {
+    border-color: #8bc8f6 !important;
+    box-shadow: 0 4px 15px rgba(11, 95, 165, 0.06) !important;
+}
+
+/* Lightbox Navigation & UI Layout */
+.lightbox-arrow {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-arrow:hover {
+    color: #2DB7F5 !important;
+    transform: scale(1.1);
+}
+
+.close-lightbox:hover {
+    color: #2DB7F5 !important;
+}
+
+/* Responsive Overrides for Smaller Viewports */
+@media screen and (max-width: 768px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Bring the buttons inside the viewport layout and place them overlaying the pictures */
+    .lightbox-arrow {
+        font-size: 26px !important;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 44px;
+        height: 44px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 10002;
+    }
+    
+    .lightbox-prev {
+        left: 10px !important;
+    }
+    
+    .lightbox-next {
+        right: 10px !important;
+    }
+    
+    .lightbox-content-wrapper {
+        max-width: 92% !important;
+    }
+}
+
+/* Base enhancements for wallpaper project cards */
+.project-card {
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-top: none !important;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Ensure content sits cleanly on top of the background image overlay */
+.project-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Force text and buttons inside wallpaper cards to stand out beautifully */
+.project-card h3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.project-card p {
+    color: #f1f1f1 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.project-card .preview-btn {
+    position: relative;
+    z-index: 2;
+}
+
+/* Unique Wallpaper Settings per Card (Using compressed .webp files) */
+.project-card.proj-pallet {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/pallet_bg.webp");
+}
+
+.project-card.proj-unpallet {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/unpallet_bg.webp");
+}
+
+.project-card.proj-trucks {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/trucks_bg.webp");
+}
+
+.project-card.proj-refrigerated {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/refrigerated_bg.webp");
+}
+
+.project-card.proj-cars {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/cars_bg.webp");
+}
