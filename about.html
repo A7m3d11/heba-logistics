@@ -4,7 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heba Logistics - About Us</title>
-<link rel="icon" type="image/webp" href="images/bluelogo.webp">    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="images/bluelogo.webp">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 3-Column Grid for Projects matching the style architecture */
+        .three-card-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(11, 95, 165, 0.15);
+        }
+
+        /* Ensure text sits cleanly on top of the background image overlay */
+        .project-card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card h3 {
+            color: #ffffff;
+            font-size: 19px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .project-card p {
+            color: #f1f1f1;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .project-card .preview-btn {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Photo Counter UI Styling */
+        .lightbox-counter {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px 15px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+
+        /* Responsive fallback for tablets and mobile viewports */
+        @media screen and (max-width: 992px) {
+            .three-card-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .three-card-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -27,22 +117,78 @@
     <h1 class="page-title">About Us</h1>
     
     <p class="about-intro-section">
-        Heba Logistics is a leading logistics and cargo handling service provider committed to delivering comprehensive, reliable, and efficient solutions across the supply chain.
+        Heba Logistics is a leading logistics and cargo handling service provider committed to delivering comprehensive, reliable, and efficient solutions across the supply chain. With deep expertise in container, vehicle, and general cargo handling, we cater to both domestic and international clients, ensuring safe, compliant, and timely operations.
     </p>
 
     <div class="about-split-layout">
         <div class="about-description">
-            <p>With deep expertise in container, vehicle, and general cargo handling, we cater to both domestic and international clients, ensuring safe, compliant, and timely operations.</p>
+            <h2 class="section-subtitle" style="font-size: 22px; margin-bottom: 10px;">Our Strategic Approach</h2>
+            <p style="margin-bottom: 15px;">By utilizing structured operational workflows and expert strategic oversight, we seamlessly coordinate container logistics, vehicle transit, and intricate heavy cargo arrangements. We focus closely on minimizing processing timeline delays, managing complex regulatory cross-border procedures, and providing modern storage networks.</p>
+            <p>Our operational presence at major transit points—including Jeddah Islamic Port—allows us to deploy rapid physical support assets directly where client cargo enters and exits.</p>
         </div>
         
         <div class="about-badge-box">
-            <div class="badge">Domestic & International Services</div>
-            <div class="badge">Safe & Compliant Operations</div>
+            <div class="badge">🌐 Global & Domestic Logistics Execution</div>
+            <div class="badge">⚓ Jeddah Islamic Port Presence</div>
+            <div class="badge">🔒 Regulated, Fully Compliant Operations</div>
+            <div class="badge">📦 End-to-End Stock Tracking & Control</div>
         </div>
     </div>
 
-    <h2 class="section-subtitle">Why Choose Us</h2>
+    <div class="vision-mission-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0;">
+        <div class="card" style="border-top: 4px solid #0B5FA5;">
+            <h3 style="font-size: 20px; margin-bottom: 10px;">🎯 Our Mission</h3>
+            <p style="font-size: 14.5px;">To drive enterprise growth and trade fluid safety by engineering flawless, risk-managed transportation, specialized warehousing infrastructure, and transparent customs processes that reliably connect our corporate clients to international marketplaces.</p>
+        </div>
+        <div class="card" style="border-top: 4px solid #0B5FA5;">
+            <h3 style="font-size: 20px; margin-bottom: 10px;">👁️ Our Vision</h3>
+            <p style="font-size: 14.5px;">To be recognized globally as the ultimate standard for supply chain optimization, distinguished by our focus on cost minimization, technological integration, and agile response strategies to global disruptions.</p>
+        </div>
+    </div>
 
+    <!-- Previous Projects Section -->
+    <h2 class="section-subtitle">Previous Projects</h2>
+    <p class="services-subtitle-text" style="margin-bottom: 25px;">Explore our proven operational excellence through our project portfolio. Select an option below to view detailed galleries showcasing our successful field operations and execution capabilities.
+
+
+</p>
+    
+    <div class="three-card-row">
+        <div class="project-card" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/pimages/Palletizedw.webp');">
+            <div class="project-card-content">
+                <h3>Palletized shipments operations</h3>
+                <p>Efficient handling and transportation of palletized cargo, ensuring secure, organized, and timely delivery across the supply chain.</p>
+            </div>
+            <button class="btn preview-btn" data-project="pallet">Preview Photos</button>
+        </div>
+
+        <div class="project-card" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/pimages/Unpalletizedw.webp');">
+            <div class="project-card-content">
+                <h3>Unpalletized shipments operations</h3>
+                <p>Efficient handling and transportation of unpalletized cargo, ensuring safe loading, securing, and delivery of loose shipments.</p>
+            </div>
+            <button class="btn preview-btn" data-project="unpallet">Preview Photos</button>
+        </div>
+
+        <div class="project-card" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/pimages/Trucksw.webp');">
+            <div class="project-card-content">
+                <h3>Trucks & heavy equipment</h3>
+                <p>Specialized transportation and handling of passenger buses, heavy construction equipment, large electrical coils, and other oversized cargo with safety and efficiency.</p>
+            </div>
+            <button class="btn preview-btn" data-project="trucks">Preview Photos</button>
+        </div>
+
+        <div class="project-card" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/pimages/carsw.webp');">
+            <div class="project-card-content">
+                <h3>Cars operations</h3>
+                <p>Specialized in transporting, loading, unloading, storage, and re-exporting vehicles with safe and efficient handling at every stage.</p>
+            </div>
+            <button class="btn preview-btn" data-project="cars">Preview Photos</button>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <h2 class="section-subtitle" style="margin-top: 60px;">Why Choose Us</h2>
     <div class="four-card-row">
         <div class="feature-card">
             <span class="card-icon">👥</span>
@@ -70,9 +216,119 @@
     </div>
 </main>
 
+<div id="lightboxModal" class="lightbox" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; flex-direction: column;">
+    <span class="close-lightbox" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none;">&times;</span>
+    
+    <div id="lightboxCounter" class="lightbox-counter">0 / 0</div>
+    
+    <div class="lightbox-content-wrapper" style="position: relative; max-width: 80%; max-height: 75%; display: flex; justify-content: center; align-items: center;">
+        <a class="lightbox-arrow lightbox-prev" style="position: absolute; left: -60px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none; text-decoration: none;">&#10094;</a>
+        <img id="lightboxImg" src="" alt="Project Preview" style="max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <a class="lightbox-arrow lightbox-next" style="position: absolute; right: -60px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none; text-decoration: none;">&#10095;</a>
+    </div>
+</div>
+
 <footer>
     <p>© 2026 Heba Logistics. All Rights Reserved.</p>
 </footer>
+
+<script>
+    // --- GALLERY IMAGES SETUP ---
+    const projectGalleries = {
+        pallet: [
+            { src: "images/pimages/Palletize1.webp" },
+            { src: "images/pimages/Palletize2.webp" },
+            { src: "images/pimages/Palletize3.webp" },
+            { src: "images/pimages/Palletize4.webp" },            
+        ],
+        unpallet: [
+            { src: "images/pimages/unpalletize1.webp" }
+        ],
+        trucks: [
+            { src: "images/pimages/equ1.webp" },
+            { src: "images/pimages/equ2.webp" },
+            { src: "images/pimages/equ3.webp" },
+            { src: "images/pimages/equ4.webp" },
+            { src: "images/pimages/equ5.webp" },  
+            { src: "images/pimages/equ6.webp" },  
+        ],
+        cars: [
+            { src: "images/pimages/cars1.webp" },
+            { src: "images/pimages/cars2.webp" },
+            { src: "images/pimages/cars3.webp" },
+        ]
+    };
+
+    let currentGallery = [];
+    let activePhotoIndex = 0;
+
+    const modal = document.getElementById("lightboxModal");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+    const closeBtn = document.querySelector(".close-lightbox");
+
+    document.querySelectorAll(".preview-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            const targetProject = this.getAttribute("data-project");
+            currentGallery = projectGalleries[targetProject] || [];
+            if(currentGallery.length > 0) {
+                activePhotoIndex = 0;
+                openLightbox();
+            }
+        });
+    });
+
+    function openLightbox() {
+        modal.style.display = "flex";
+        renderPhoto();
+        document.body.style.overflow = "hidden";
+    }
+
+    function renderPhoto() {
+        const item = currentGallery[activePhotoIndex];
+        lightboxImg.src = item.src;
+        lightboxCounter.innerText = `${activePhotoIndex + 1} / ${currentGallery.length}`;
+    }
+
+    function closeLightbox() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    closeBtn.addEventListener("click", closeLightbox);
+    
+    modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            closeLightbox();
+        }
+    });
+
+    document.querySelector(".lightbox-next").addEventListener("click", function(e) {
+        e.stopPropagation();
+        activePhotoIndex = (activePhotoIndex + 1) % currentGallery.length;
+        renderPhoto();
+    });
+
+    document.querySelector(".lightbox-prev").addEventListener("click", function(e) {
+        e.stopPropagation();
+        activePhotoIndex = (activePhotoIndex - 1 + currentGallery.length) % currentGallery.length;
+        renderPhoto();
+    });
+
+    document.addEventListener("keydown", function(e) {
+        if (modal.style.display === "flex") {
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowRight") {
+                activePhotoIndex = (activePhotoIndex + 1) % currentGallery.length;
+                renderPhoto();
+            }
+            if (e.key === "ArrowLeft") {
+                activePhotoIndex = (activePhotoIndex - 1 + currentGallery.length) % currentGallery.length;
+                renderPhoto();
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
