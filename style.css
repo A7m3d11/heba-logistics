@@ -513,58 +513,64 @@ form button:disabled {
     margin: 40px 0;
 }
 
-.project-item-box {
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* Lightbox Pagination UI Controls Layer */
+.lightbox-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-item-box:hover {
-    border-color: #8bc8f6 !important;
-    box-shadow: 0 4px 15px rgba(11, 95, 165, 0.06) !important;
+.lightbox-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-/* Lightbox Navigation & UI Layout */
+.lightbox-dot.active {
+    background-color: #2DB7F5;
+    transform: scale(1.2);
+}
+
 .lightbox-arrow {
+    font-size: 36px !important;
     transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0 8px;
+    color: #ffffff;
 }
 
 .lightbox-arrow:hover {
     color: #2DB7F5 !important;
-    transform: scale(1.1);
 }
 
 .close-lightbox:hover {
     color: #2DB7F5 !important;
 }
 
-/* Responsive Overrides for Smaller Viewports */
+/* Counter display metrics */
+.lightbox-counter {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
 @media screen and (max-width: 768px) {
     .vision-mission-grid {
         grid-template-columns: 1fr !important;
     }
-    
-    /* Bring the buttons inside the viewport layout and place them overlaying the pictures */
     .lightbox-arrow {
-        font-size: 26px !important;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 44px;
-        height: 44px;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        z-index: 10002;
+        font-size: 32px !important;
     }
-    
-    .lightbox-prev {
-        left: 10px !important;
-    }
-    
-    .lightbox-next {
-        right: 10px !important;
-    }
-    
     .lightbox-content-wrapper {
-        max-width: 92% !important;
+        max-width: 90% !important;
     }
 }
 
@@ -599,25 +605,4 @@ form button:disabled {
 .project-card .preview-btn {
     position: relative;
     z-index: 2;
-}
-
-/* Unique Wallpaper Settings per Card (Using compressed .webp files) */
-.project-card.proj-pallet {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/pallet_bg.webp");
-}
-
-.project-card.proj-unpallet {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/unpallet_bg.webp");
-}
-
-.project-card.proj-trucks {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/trucks_bg.webp");
-}
-
-.project-card.proj-refrigerated {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/refrigerated_bg.webp");
-}
-
-.project-card.proj-cars {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/cars_bg.webp");
 }
